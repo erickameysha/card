@@ -1,7 +1,5 @@
-import React, {ChangeEvent, KeyboardEventHandler, useState} from 'react';
+import React, {ChangeEvent,  useState} from 'react';
 import {Input} from '@mantine/core'
-import {useDispatch} from "react-redux";
-import {createCardAC} from "../../store/Card-Reducer";
 
 type PropsType = {
     onClick: (title: string) => void
@@ -11,7 +9,6 @@ type PropsType = {
 
 const UnInput = (props: PropsType) => {
     const [title, setTitle] = useState('')
-
     const onClickHandler = () => {
         props.onClick(title)
         // dispatch(createCardAC(title))
@@ -19,16 +16,11 @@ const UnInput = (props: PropsType) => {
     }
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        setTitle(e.currentTarget.value)
+        const text = e.currentTarget.value
+        setTitle(text)
+
     }
 
-
-// const onClickh
-//andler = (e: KeyboardEventHandler<HTMLInputElement>) => {
-//  e.cha
-//
-//     console.log()
-// }
     return (
         <Input value={title} onChange={onChangeHandler} onKeyPress={(e) => {
             if (e.key === 'Enter') {
