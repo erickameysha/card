@@ -13,6 +13,7 @@ export const tagsReducer =(state=initialState, action: ActionType)=> {
             return state
         }
         case "DELETE-TAGS":{
+
             return state.filter(el => el !== action.newTags)
         }
         default: return state
@@ -23,6 +24,6 @@ export const tagsReducer =(state=initialState, action: ActionType)=> {
 export const addTagsAC = (newTags: string[]) => ({
     type: 'ADD-TAGS', newTags
 }as const)
-const deleteTagsAC = (newTags:string) => ({
+ export const deleteTagsAC = (newTags:string) => ({
     type: 'DELETE-TAGS', newTags
 }as const)

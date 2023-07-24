@@ -6,6 +6,7 @@ import CardItem from "./Card/Card";
 type PropsType = {
     card: CardType[]
     removeCard: (id: string) => void
+    changeTitle:  (id: string, title: string) =>void
 }
 
 
@@ -19,7 +20,7 @@ const Cards = (props: PropsType) => {
                 props.card.map(el => {
 
                     return <Grid.Col span={4} key={el.id}>
-                        <CardItem removeCard={props.removeCard} id={el.id} title={el.title}/>
+                        <CardItem changeTitle={props.changeTitle}  removeCard={props.removeCard} id={el.id} title={el.title}/>
                     </Grid.Col>
                 })
             }
