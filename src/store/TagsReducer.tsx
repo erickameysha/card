@@ -1,6 +1,6 @@
 
 
-const initialState:string[]=[]
+const initialState:string[]=['ALL']
 type ActionType =ReturnType<typeof addTagsAC> |ReturnType<typeof  deleteTagsAC>
 export const tagsReducer =(state=initialState, action: ActionType)=> {
     switch (action.type) {

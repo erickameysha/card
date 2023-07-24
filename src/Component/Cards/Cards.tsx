@@ -7,6 +7,10 @@ type PropsType = {
     card: CardType[]
     removeCard: (id: string) => void
 }
+
+
+
+
 const Cards = (props: PropsType) => {
 
     return (
